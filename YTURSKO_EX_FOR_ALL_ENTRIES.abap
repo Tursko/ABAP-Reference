@@ -34,8 +34,8 @@ IF lt_usr01 IS NOT INITIAL.
     INTO CORRESPONDING FIELDS OF TABLE lt_usr02
     FOR ALL ENTRIES IN lt_usr01
     WHERE bname = lt_usr01-bname.
+  SORT lt_usr02 BY bname.
 ENDIF.
-SORT lt_usr02 BY bname.
 
 FIELD-SYMBOLS: <fs_usr01> TYPE usr01,
                <fs_usr02> TYPE usr02.
