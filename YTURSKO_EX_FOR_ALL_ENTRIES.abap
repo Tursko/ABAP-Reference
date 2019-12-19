@@ -26,7 +26,8 @@ SELECT *
 SORT lt_usr01 BY bname.
 DELETE ADJACENT DUPLICATES FROM lt_usr01.
 
-* Getting data from second table BUT only if it occurs in the first
+* Getting data from second table BUT only if it occurs in the first.
+* Must check if the first table is populated.
 IF lt_usr01 IS NOT INITIAL.
   SELECT *
     FROM usr02
