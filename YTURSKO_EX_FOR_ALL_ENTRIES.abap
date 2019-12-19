@@ -23,7 +23,7 @@ SELECT *
   UP TO 10 ROWS "Just want 10 rows
   FROM usr01
   INTO CORRESPONDING FIELDS OF TABLE lt_usr01.
-SORT lt_usr01 BY bname.
+SORT lt_usr01 BY bname. "Make sure they are sorted.
 DELETE ADJACENT DUPLICATES FROM lt_usr01.
 
 * Getting data from second table BUT only if it occurs in the first.
@@ -34,7 +34,7 @@ IF lt_usr01 IS NOT INITIAL.
     INTO CORRESPONDING FIELDS OF TABLE lt_usr02
     FOR ALL ENTRIES IN lt_usr01
     WHERE bname = lt_usr01-bname.
-  SORT lt_usr02 BY bname.
+  SORT lt_usr02 BY bname. "Make sure they are sorted.
 ENDIF.
 
 FIELD-SYMBOLS: <fs_usr01> TYPE usr01,
@@ -45,6 +45,7 @@ LOOP AT lt_usr01 ASSIGNING <fs_usr01>.
   CLEAR ls_combined.
   UNASSIGN <fs_usr02>.
 
+  " Binary search might be faster in cases with a lot of data.
   READ TABLE lt_usr02 ASSIGNING <fs_usr02> WITH KEY bname = <fs_usr01>-bname.
 
 *  You can use 'MOVE-CORRESPONDING' if your field names are the same.
