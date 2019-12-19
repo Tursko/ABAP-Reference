@@ -3,7 +3,7 @@
 *&---------------------------------------------------------------------*
 *&
 *&---------------------------------------------------------------------*
-REPORT YTAYLOR_EX_FOR_ALL_ENTRIES.
+REPORT YTURSKO_EX_FOR_ALL_ENTRIES.
 
 TYPES:
   BEGIN OF ls_union,
