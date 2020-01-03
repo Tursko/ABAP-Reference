@@ -1,7 +1,8 @@
 *&---------------------------------------------------------------------*
 *& Report YTURSKO_EX_FOR_ALL_ENTRIES
 *&---------------------------------------------------------------------*
-*&
+*&  This is a usage example of 'FOR ALL ENTRIES' and it also shows you 
+*&  how to combine the data sets together in a single table.
 *&---------------------------------------------------------------------*
 REPORT YTURSKO_EX_FOR_ALL_ENTRIES.
 
