@@ -48,16 +48,10 @@ LOOP AT lt_usr01 ASSIGNING <fs_usr01>.
   " Binary search might be faster in cases with a lot of data.
   READ TABLE lt_usr02 ASSIGNING <fs_usr02> WITH KEY bname = <fs_usr01>-bname.
 
-*  You can use 'MOVE-CORRESPONDING' if your field names are the same.
-*  If they aren't then you'll need to do direct assignments.
-*   Example:
-*    ls_combined-bname = <fs_usr01>-bname.
-*    ls_combined-datfm = <fs_usr01>-datfm.
-*    ls_combined-trdat = <fs_usr02>-trdat.
-*    ls_combined-ltime = <fs_usr02>-ltime.
-
-    MOVE-CORRESPONDING <fs_usr01> TO ls_combined.
-    MOVE-CORRESPONDING <fs_usr02> TO ls_combined.
+    ls_combined-bname = <fs_usr01>-bname.
+    ls_combined-datfm = <fs_usr01>-datfm.
+    ls_combined-trdat = <fs_usr02>-trdat.
+    ls_combined-ltime = <fs_usr02>-ltime.
 
     APPEND ls_combined TO lt_combined.
   ENDLOOP.
