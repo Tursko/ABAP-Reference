@@ -3,46 +3,41 @@
 *----------------------------------------------------------------------*
 *
 *----------------------------------------------------------------------*
-CLASS ycl_ex_validnumber DEFINITION
-  PUBLIC
-  FINAL
-  CREATE PUBLIC .
+class YCL_EX_VALIDNUMBER definition
+  public
+  final
+  create public .
 
-  PUBLIC SECTION.
+public section.
+  type-pools ABAP .
 
-    TYPE-POOLS abap .
-    CLASS-METHODS is_valid
-      IMPORTING
-        !iv_number TYPE num8
-      EXPORTING
-        !ev_valid TYPE abap_bool .
+  class-methods IS_VALID
+    importing
+      !IV_NUMBER type NUM8
+    returning
+      value(RV_VALID) type ABAP_BOOL .
   PROTECTED SECTION.
   PRIVATE SECTION.
-ENDCLASS.                    "YCL_EX_VALIDNUMBER DEFINITION
+ENDCLASS.
 
 
 
-*----------------------------------------------------------------------*
-*       CLASS YCL_EX_VALIDNUMBER IMPLEMENTATION
-*----------------------------------------------------------------------*
-*
-*----------------------------------------------------------------------*
-CLASS ycl_ex_validnumber IMPLEMENTATION.
+CLASS YCL_EX_VALIDNUMBER IMPLEMENTATION.
 
 
 * <SIGNATURE>---------------------------------------------------------------------------------------+
 * | Static Public Method YCL_EX_VALIDNUMBER=>IS_VALID
 * +-------------------------------------------------------------------------------------------------+
 * | [--->] IV_NUMBER                      TYPE        NUM8
-* | [<---] EV_VALID                       TYPE        ABAP_BOOL
+* | [<-()] RV_VALID                       TYPE        ABAP_BOOL
 * +--------------------------------------------------------------------------------------</SIGNATURE>
   METHOD is_valid.
 
-    ev_valid = abap_false.
+    rv_valid = abap_false.
 
     IF iv_number >= 0 AND iv_number <= 100.
-      ev_valid = abap_true.
+      rv_valid = ABAP_true.
     ENDIF.
 
-  ENDMETHOD.                    "IS_VALID
-ENDCLASS.                    "YCL_EX_VALIDNUMBER IMPLEMENTATION
+    ENDMETHOD.                    "IS_VALID
+ENDCLASS.
