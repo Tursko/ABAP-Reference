@@ -25,7 +25,7 @@ CLASS ltc_validnumber IMPLEMENTATION.
     cl_abap_unit_assert=>assert_equals(
       act   = rv_valid    "Actual Value
       exp   = 'X'         "Expected Value
-    " msg   = 'Testing value ev_Valid'
+    " msg   = 'Testing value rv_valid
     ).
   ENDMETHOD.       "is_Valid
 
@@ -37,7 +37,7 @@ CLASS ltc_validnumber IMPLEMENTATION.
     cl_abap_unit_assert=>assert_equals(
       act   = rv_valid  "Actual Value
       exp   = ''        "Expected Value
-    " msg   = 'Testing value ev_Valid'
+    " msg   = 'Testing value rv_valid
     ).
   ENDMETHOD.       "invalid
 
