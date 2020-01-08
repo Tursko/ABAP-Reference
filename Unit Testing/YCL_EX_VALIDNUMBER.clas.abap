@@ -3,26 +3,31 @@
 *----------------------------------------------------------------------*
 *
 *----------------------------------------------------------------------*
-class YCL_EX_VALIDNUMBER definition
-  public
-  final
-  create public .
+CLASS ycl_ex_validnumber DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC .
 
-public section.
+  PUBLIC SECTION.
 
-  type-pools ABAP .
-  class-methods IS_VALID
-    importing
-      !IV_NUMBER type NUM8
-    exporting
-      !EV_VALID type ABAP_BOOL .
+    TYPE-POOLS abap .
+    CLASS-METHODS is_valid
+      IMPORTING
+        !iv_number TYPE num8
+      EXPORTING
+        !ev_valid TYPE abap_bool .
   PROTECTED SECTION.
   PRIVATE SECTION.
-ENDCLASS.
+ENDCLASS.                    "YCL_EX_VALIDNUMBER DEFINITION
 
 
 
-CLASS YCL_EX_VALIDNUMBER IMPLEMENTATION.
+*----------------------------------------------------------------------*
+*       CLASS YCL_EX_VALIDNUMBER IMPLEMENTATION
+*----------------------------------------------------------------------*
+*
+*----------------------------------------------------------------------*
+CLASS ycl_ex_validnumber IMPLEMENTATION.
 
 
 * <SIGNATURE>---------------------------------------------------------------------------------------+
@@ -36,8 +41,8 @@ CLASS YCL_EX_VALIDNUMBER IMPLEMENTATION.
     ev_valid = abap_false.
 
     IF iv_number >= 0 AND iv_number <= 100.
-      ev_valid = ABAP_true.
+      ev_valid = abap_true.
     ENDIF.
 
-    ENDMETHOD.                    "IS_VALID
-ENDCLASS.
+  ENDMETHOD.                    "IS_VALID
+ENDCLASS.                    "YCL_EX_VALIDNUMBER IMPLEMENTATION
