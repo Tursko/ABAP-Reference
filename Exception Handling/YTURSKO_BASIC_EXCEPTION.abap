@@ -21,7 +21,6 @@ CLASS lcl_example IMPLEMENTATION.
     TRY.
         a = b / 0.
       CATCH cx_sy_zerodivide.
-        "WRITE: 'Cant divide by zero!'.
         RAISE EXCEPTION TYPE cx_sy_zerodivide.
     ENDTRY.
   ENDMETHOD.
