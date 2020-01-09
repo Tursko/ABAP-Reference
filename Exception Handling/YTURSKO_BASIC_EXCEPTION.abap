@@ -23,7 +23,6 @@ CLASS lcl_example IMPLEMENTATION.
       CATCH cx_sy_zerodivide.
         "WRITE: 'Cant divide by zero!'.
         RAISE EXCEPTION TYPE cx_sy_zerodivide.
-        ""STOP.
     ENDTRY.
   ENDMETHOD.
 ENDCLASS.
@@ -34,7 +33,7 @@ START-OF-SELECTION.
   CREATE OBJECT lo_test.
   TRY.
       lo_test->divide( ).
-    CATCH cx_root.
+    CATCH cx_root. "Root exception
       WRITE: 'Caught the exception.'.
       STOP.
   ENDTRY.
