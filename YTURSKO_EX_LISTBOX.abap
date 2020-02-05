@@ -18,7 +18,7 @@ INITIALIZATION.
   ls_vrm_value-key =     'Choice2'.
   APPEND ls_vrm_value TO lt_vrm_values.
 
-  lv_vrm_id = 'p_ex'.
+  lv_vrm_id = 'p_ex'. "Needs to match param name
 
   CALL FUNCTION 'VRM_SET_VALUES'
     EXPORTING
