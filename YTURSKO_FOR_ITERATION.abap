@@ -25,7 +25,7 @@ lt_customers =
     ( customer = 'C004' name = 'Customer 4' city = 'HOU' route = 'R004' )
     ).
 
-" Loop through LT_CUSTOMERS and return a new table including all the cities. 
+" Loop through LT_CUSTOMERS and return a new table of just the cities. 
 DATA: lt_cities TYPE TABLE OF char30.
 lt_cities =
   VALUE #(
