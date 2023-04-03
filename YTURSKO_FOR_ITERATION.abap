@@ -5,7 +5,7 @@
 *& An iteration expression is used to perform an iteration on a table.
 *& FOR can be used with Constructor Operators like NEW, VALUE. 
 *&---------------------------------------------------------------------*
-REPORT ytrr_for_iteration.
+REPORT ytursko_for_iteration.
 
 TYPES:
   BEGIN OF ty_customer,
